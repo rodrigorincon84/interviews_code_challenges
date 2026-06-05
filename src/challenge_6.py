@@ -9,13 +9,16 @@ def all_numbers(array_):
             break
     return all_numbers_
 
+def all_numbers_v2(array_):
+    return len(list(filter(lambda x: type(x) == str, array_))) == 0
+
 def sum_array(array_):
     return array_[0] if len(array_) == 1 else array_[0] + sum_array(array_[1:])
 
 if __name__ == '__main__':
     array = [3, 6, "9"]
     average = None
-    if all_numbers(array):
+    if all_numbers_v2(array):
         s = sum_array(array)
         print(f"Sum is {s}")
         average = s / len(array)
